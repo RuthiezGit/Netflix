@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .faq{
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .icon{
+      width: 40px;
+      transition: 0.3s ease;
+    }
+    .opened{
+      transform: rotate(45deg);
+      transition: 0.3s ease;
+    }
+    .button{
+      background-color: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 20px;
+      font-size: 24px;
+    }
+    .details{
+      background-color: black;
+      color: white;
+      font-size: 24px;
+      padding: 5px 20px;
+    }
+    .collapsed{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="faq">
+    <div class="button">
+        <span>What is Netflix</span>
+        <img class="icon" src="/plus (1).png" alt="">
+    </div>
+    <div class="details collapsed">
+        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+        <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!</p>
+    </div>
+  </div>
+  <div class="faq">
+    <div class="button">
+        <span>What is Netflix</span>
+        <img class="icon" src="/plus (1).png" alt="">
+    </div>
+    <div class="details collapsed">
+        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
+        <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!</p>
+    </div>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll(".button");
+    const icons = document.querySelectorAll(".icon");
+    const details = document.querySelectorAll(".details");
+    
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        details[index].classList.toggle("collapsed");
+        icons[index].classList.toggle("opened");
+      });
+    });
+  </script>
+
+  
+</body>
+</html>
